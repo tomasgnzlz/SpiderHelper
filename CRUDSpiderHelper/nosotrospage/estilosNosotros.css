@@ -1,0 +1,95 @@
+html{box-sizing: border-box;}
+*{ margin: 0px;    padding: 0px; box-sizing: inherit;
+}
+/*Cabecera*/
+.head{
+  color: white;
+  font-size: 20px;
+  background-color: black;
+  margin-bottom: 2em;
+}
+.head h1{
+  padding: 0.3em;
+}
+.menu{
+  margin-top: 3px;
+  overflow: hidden;
+}
+.menu ul li{
+  float:left;
+  list-style: none;
+  display: block;
+  background-color: black;
+}
+.menu ul li a{
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+.menu ul li:hover{
+background-color: #eca023;
+}
+
+/*info*/
+.info{
+  margin: 0 auto;
+  overflow:hidden;
+  width: 75%;
+  padding: 1em;
+}
+.texto{
+  padding: 1em;
+  color: #fff;
+  background-color: #0d0d0d;
+  font-size: 20px;
+  float: left;
+}
+.image{
+    float: left;
+}
+.image img{
+  width: 800px;
+  height: 400px;
+  position: relative;
+  left: 120px;
+}
+.texto span{
+    color: #eca023;
+}
+.titulo{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/*Footer*/
+footer{
+  background-color: #0d0d0d;
+  padding: 1em;
+  margin-top:1em;
+}
+
+.imagefooter{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.instagram,.twiter,.facebook, img{
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin: 1em;
+}
+.spider{
+  color: white;
+  text-align: center;
+  margin-top: 1em;
+}
+.spider a{
+  color: #fff;
+}
+.spider h2{
+  line-height: 30px;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset='utf-8'>
+    <title>Registrate</title>
+    <link rel="shortcut icon" href="images/icono.JPG">
+    <link rel="stylesheet" href="estilosRegister.css">
+</head>
+
+<body>
+    <div class="head">
+        <h1>Register</h1>
+        <div class="menu">
+            <ul>
+                <li><a href="../../index.html">Volver a Inicio</a></li>
+                <li><a href="../indexLogin.html">Login</a></li>
+                <li><a href="../../buscarprodpage/indexProd.html">Buscar Productos</a></li>
+                <li><a href="../../nosotrospage/indexNosotros.html">Acerca de Nosotros</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="info">
+        <div class="nombre">
+            <h1>Spider<span>H</span>elper</h1>
+            <p><span><a>Vaya! Parece que no tienes cuenta. Añade tus datos para poder tenerla.</a></p>
+        </div>
+        <form action="../indexLogin.html" enctype="multipart/form-data" method="post">
+            <label for="nombre" class="labelColor">Nombre Completo</label><br />
+            <input type="text" name="nombre" id="nombre" class="inputColor"><br /><br />
+
+            <label for="apellido" class="labelColor">Apellidos</label><br />
+            <input type="text" name="apellido" id="apellido" class="inputColor"><br /><br />
+
+            <label for="nomusuario" class="labelColor">Nombre de usuario para la aplicación</label><br />
+            <input type="text" name="nomusuario" id="nomusuario" class="inputColor"><br /><br />
+
+            <label for="correo" class="labelColor">Dirección de Correo</label><br />
+            <input type="text" name="correo" id="correo" class="inputColor"><br /><br />
+
+            <label for="contraseña" class="labelColor">Contraseña</label>
+            <input type="password" name="contraseña" id="contraseña" class="inputColor">
+
+
+            <!--------------------------------ssss-------------------------------------->
+
+
+            <label for="tipoUser" class="labelColor">Seleccione el tipo de Usuario:</label>
+            <br />
+            <br />
+            <div class="tabulador">
+
+            
+            <input type="checkbox" name="admin" id="admin" class="tipoAdministrador" onclick="handleAdminSelection()">
+            <label for="admin" class="labelColor">Administrador</label>
+            <br />
+
+            <input type="checkbox" name="comprador" id="comprador" class="tipoComprador"
+                onclick="handleBuyerSelection()" disabled>
+            <label for="comprador" class="labelColor">Comprador</label>
+            <br />
+
+            <input type="checkbox" name="vendedor" id="vendedor" class="tipoVendedor" onclick="handleSellerSelection()"
+                disabled>
+            <label for="vendedor" class="labelColor">Vendedor</label>
+            <br />
+        </div>
+        <!--Script para que solo se pueda ser administrador o vendedor y comprador, pero no las 3 cosas a la vez.-->
+            <script>
+                function handleAdminSelection() {
+                    var adminCheckbox = document.getElementById("admin");
+                    var compradorCheckbox = document.getElementById("comprador");
+                    var vendedorCheckbox = document.getElementById("vendedor");
+
+                    if (adminCheckbox.checked) {
+                        compradorCheckbox.checked = false;
+                        compradorCheckbox.disabled = true;
+                        vendedorCheckbox.checked = false;
+                        vendedorCheckbox.disabled = true;
+                    } else {
+                        compradorCheckbox.disabled = false;
+                        vendedorCheckbox.disabled = false;
+                    }
+                }
+
+                function handleBuyerSelection() {
+                    var compradorCheckbox = document.getElementById("comprador");
+                    var adminCheckbox = document.getElementById("admin");
+
+                    if (compradorCheckbox.checked) {
+                        adminCheckbox.checked = false;
+                        adminCheckbox.disabled = true;
+                    } else {
+                        adminCheckbox.disabled = false;
+                    }
+                }
+
+                function handleSellerSelection() {
+                    var vendedorCheckbox = document.getElementById("vendedor");
+                    var adminCheckbox = document.getElementById("admin");
+
+                    if (vendedorCheckbox.checked) {
+                        adminCheckbox.checked = false;
+                        adminCheckbox.disabled = true;
+                    } else {
+                        adminCheckbox.disabled = false;
+                    }
+                }
+            </script>
+
+            <input type="submit" value="Crear Cuenta" id="botonSesion">
+
+        </form>
+    </div>
+
+
+    <footer>
+        <div class="imagefooter">
+            <div class="instagram"><a href="#"><img src="images/logos/instaD.png" alt="Instagram"></a></div>
+            <div class="twiter"><a href="#"><img src="images/logos/twitterD.png" alt="Twitter"></a></div>
+            <div class="facebook"><a href="#"><img src="images/logos/facebookD.png" alt="Facebook"></a></div>
+        </div>
+        <div class="spider">
+            <h2>SpiderHelper</h2>
+            <p class="txtFoot">Copyright &copy; 2023 SpiderHelper, Inc.</p>
+            <a href="#">Información Legal</a><span>&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;</span><a
+                href="#">Política de privacidad</a>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
